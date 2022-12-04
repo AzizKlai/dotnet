@@ -1,0 +1,30 @@
+<br><br><br>
+
+
+     @model tp3sqlite.Models.Person 
+    
+    @if(Model!=null)  {
+<div class="row">
+    <div class="col-3" style="padding: 1%;"><img class="card-img-top"  src="@Model.image" style="height: inherit;"  alt="Card image cap">
+     </div>
+<div class="card col">
+  <div class="card-header">
+    <h5>@Model.firstName  @Model.lastname</h5>
+  </div>
+  <div class="card-body">
+   <h6 >  email :  @Model.email</h6> <br>
+   <h6 >datebirth :  @Model.datebirth  </h6><br>
+   <h6 >country :  @Model.country</h6><br>
+  </div>
+</div>
+</div>
+ }
+
+    
+ 
+
+           
+    
+        
+    </tbody>
+</table>

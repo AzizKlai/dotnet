@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Person";
+    
+}
+<h1>@ViewBag.warning</h1>
+
+<h1>@ViewData["Title"]</h1>
+
+
+<br>
+
+<br>
+@model List<tp3sqlite.Models.Person> 
+<div class="row">
+      @foreach (var person in Model)
+    {
+        <div class="col-sm-4" style="padding: 0.5%;">
+            <div class="card">
+                
+                <div style="height: 200px ;"><img class="card-img-top"  src="@person.image" style="height: inherit;"  alt="Card image cap"></div>
+            <div class="card-body">
+               <a href="/Person/@person.id"> <h5 class="card-title">@person.firstName @person.lastname</h5></a>
+                <p class="card-text">@person.email</p>
+            </div>
+            </div>
+        </div>
+  }
+</div>
+
+
+</table>

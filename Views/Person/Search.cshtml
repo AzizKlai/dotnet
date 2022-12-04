@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Privacy Policy";
+
+}
+
+<form asp-controller="Person" asp-action="Search" method="post">
+    <div class="form-row row">
+    
+    <div class="col">
+      <input type="text" class="form-control"  name="firstname" required placeholder="Name">
+    </div>
+
+    <div class="col">
+      <input type="text" class="form-control" name="country"  placeholder="Country">
+    </div>
+
+     <div class="col">
+      <button type="submit" class="btn btn-primary mb-2" > Search </button>
+    </div>
+    
+  </div>
+</form>
+
+<br>
+@model List<tp3sqlite.Models.Person> 
+    @if(Model.Count!=0){
+        
+  <table class="table">
+    <thead>
+        <tr>
+             <th>id</th>
+            <th>firstName</th>
+            <th>lastname</th>
+            <th>email</th>
+            <th>datebirth</th>
+            <th>country</th>
+        </tr>
+        </thead>
+        <tbody>
+         
+           
+            @foreach (var person in Model)
+            { 
+        <tr>
+            <th><a href="/Person/@person.id">@person.id</a></th>
+            <th>@person.firstName</th>
+            <th>@person.lastname</th>
+            <th>@person.email</th>
+            <th>@person.datebirth</th>
+            <th>@person.country</th>
+        </tr>
+ 
+
+           
+        }
+        
+    </tbody>
+</table>      
+    }
+
